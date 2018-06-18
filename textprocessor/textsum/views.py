@@ -10,6 +10,6 @@ from .services import Summarize
 def text_sum_viewfunction(request):
     serializer = SummarizeSerializer(data=request.data)
     if serializer.is_valid():
-        summarizer = SummarizeSerializer(serializer.save())
-        return Response(summarizer.data)
+        serializer.save()
+        return Response(serializer.data)
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
