@@ -15,8 +15,9 @@ Including another URLconf
 """
 from django.urls import path
 
-from . import views
+from textsum import views
 
+# Url router for API subdomain
 urlpatterns = [
-    path('textsum', views.text_sum_viewfunction, name='textsum'),
+    path('', views.text_sum_viewfunction, name='textsum'),
 ]

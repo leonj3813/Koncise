@@ -1,0 +1,22 @@
+version: '3'
+services:
+  nginx:
+    build: ./nginx
+    restart: always
+    ports:
+      - "80:8000"
+    volumes:
+      - nginx-tmp:/tmp
+      - textsum-vol:/static
+    depends_on:
+      - web
+  web:
+    build: ./textprocessor
+    restart: always
+    volumes:
+      - nginx-tmp:/tmp
+      - textsum-vol:/code/static
+
+volumes:
+    textsum-vol:
+    nginx-tmp:

@@ -16,5 +16,5 @@ Including another URLconf
 from django.urls import include, path
 
 urlpatterns = [
-    path('', include('textsum.urls'))
+    path('', include('textsum.urls.main'))  # Send all non subdomain requests to the main url router.
 ]
