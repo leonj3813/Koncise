@@ -1,234 +1,357 @@
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-
+<!doctype html>
+<html>
   <head>
-
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>API Reference</title>
 
-    <title>Koncise - Automatic article summaries</title>
-
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
-
-    <!-- Custom fonts for this template -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
-
-    <!-- Custom styles for this template -->
-    <link rel="stylesheet" type="text/css" href="{% static 'textsum/css/landing-page.css' %}">
-
+    <style>
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .cd {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <link href="{% static 'textsum/css/screen.css' %}" rel="stylesheet" media="screen" />
+    <link href="{% static 'textsum/css/print.css' %}" rel="stylesheet" media="print" />
+      <script src="{% static 'textsum/js/all_nosearch.js' %}"></script>
   </head>
 
-  <body>
-
-    <!-- Navigation -->
-    <nav class="navbar navbar-light bg-light static-top">
-      <div class="container">
-        <a class="navbar-brand" href="#">Koncise</a>
-        <a class="btn btn-primary" href="#">Sign In</a>
+  <body class="index" data-languages="[&quot;shell&quot;,&quot;python&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="{% static 'textsum/img/navbar.png' %}" alt="Navbar" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="{% static 'textsum/img/logo.png' %}" class="logo" alt="Logo" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="shell">shell</a>
+              <a href="#" data-language-name="python">python</a>
+        </div>
+      <div id="toc" class="toc-list-h1">
+          <li>
+            <a href="#introduction" class="toc-h1 toc-link" data-title="introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#summation" class="toc-h1 toc-link" data-title="summation">Summation</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#uri-endpoint" class="toc-h2 toc-link" data-title="uri-endpoint">URI Endpoint</a>
+                  </li>
+                  <li>
+                    <a href="#required-post-parameters" class="toc-h2 toc-link" data-title="required-post-parameters">Required POST Parameters</a>
+                  </li>
+                  <li>
+                    <a href="#optional-post-parameters" class="toc-h2 toc-link" data-title="optional-post-parameters">Optional POST Parameters</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#errors" class="toc-h1 toc-link" data-title="errors">Errors</a>
+          </li>
       </div>
-    </nav>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='introduction'>Introduction</h1>
+<p>The Koncise API uses the latest in machine learning and data mining technologies to create a summary containing the major points from a given article.</p>
 
-    <!-- Masthead -->
-    <header class="masthead text-white text-center">
-      <div class="overlay"></div>
-      <div class="container">
-        <div class="row">
-          <div class="col-xl-9 mx-auto">
-            <h1 class="mb-5">Build a landing page for your business or project and generate more leads!</h1>
-          </div>
-          <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
-            <form>
-              <div class="form-row">
-                <div class="col-12 col-md-9 mb-2 mb-md-0">
-                  <input type="email" class="form-control form-control-lg" placeholder="Enter your email...">
-                </div>
-                <div class="col-12 col-md-3">
-                  <button type="submit" class="btn btn-block btn-lg btn-primary">Sign up!</button>
-                </div>
-              </div>
-            </form>
-          </div>
-        </div>
+<p>By default the API will return a five sentence summary of any given English text. Shorter or longer summaries can be requested, as can summaries of articles in different languages.</p>
+
+<p>The Koncise API is free to use for up to 100 summaries a day.</p>
+
+<!-- We have language bindings in Shell, Ruby, and Python! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
+
+This example API documentation page was created with [Slate](https://github.com/lord/slate). Feel free to edit it and use it as a base for your own API's documentation. -->
+<h1 id='summation'>Summation</h1><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
+
+<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
+<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+</code></pre>
+<blockquote>
+<p>The command below returns the summary of the text field in &quot;summary&quot; and includes the defaults for &quot;algorithm&quot;, &quot;sentences_count&quot; and &quot;language&quot;.</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+ -d <span class="s1">'{"text":"Google LLC is an American multinational technology company that specializes in Internet-related services and products, which include online advertising technologies, search engine, cloud computing, software, and hardware. Google was founded in 1998 by Larry Page and Sergey Brin while they were Ph.D. students at Stanford University, California. Together, they own about 14 percent of its shares and control 56 percent of the stockholder voting power through supervoting stock. They incorporated Google as a privately held company on September 4, 1998. An initial public offering IPO took place on August 19, 2004, and Google moved to its new headquarters in Mountain View, California, nicknamed the Googleplex. In August 2015, Google announced plans to reorganize its various interests as a conglomerate called Alphabet Inc. Google, Alphabets leading subsidiary, will continue to be the umbrella company for Alphabets Internet interests. Upon completion of the restructure, Sundar Pichai was appointed CEO of Google, replacing Larry Page, who became the CEO of Alphabet. The companys rapid growth since incorporation has triggered a chain of products, acquisitions, and partnerships beyond Googles core search engine Google Search. It offers services designed for work and productivity Google Docs, Sheets, and Slides, email Gmail/Inbox, scheduling and time management Google Calendar, cloud storage Google Drive, social networking Google+, instant messaging and video chat Google Allo/Duo/Hangouts, language translation Google Translate, mapping and turn-by-turn navigation Google Maps/Waze/Earth/Street View, video sharing YouTube, note-taking Google Keep, and photo organizing and editing Google Photos. The company leads the development of the Android mobile operating system, the Google Chrome web browser, and Chrome OS, a lightweight operating system based on the Chrome browser. Google has moved increasingly into hardware; from 2010 to 2015, it partnered with major electronics manufacturers in the production of its Nexusdevices, and in October 2016, it released multiple hardware products including the Google Pixel smartphone, Home smart speaker, Wifi mesh wireless router, and Daydream View virtual reality headset. The new hardware chief, Rick Osterloh, stated: a lot of the innovation that we want to do now ends up requiring controlling the end-to-end user experience. Google has also experimented with becoming an Internet carrier. In February 2010, it announced Google Fiber, a fiber-optic infrastructure that was installed in Kansas City; in April 2015, it launched Project Fi in the United States, combining Wi-Fi and cellular networks from different providers; and in 2016, it announced the Google Station initiative to make public Wi-Fi available around the world, with initial deployment in India. Alexa, a company that monitors commercial web traffic, lists Google.com as the most visited website in the world. Several other Google services also figure in the top 100 most visited websites, including YouTube and Blogger. Google is the most valuable brand in the world as of 2017, but has received significant criticism involving issues such as privacy concerns, tax avoidance, antitrust, censorship, and search neutrality. Googles mission statement, from the outset, was to organize the worlds information and make it universally accessible and useful, and its unofficial slogan was Dont be evil. In October 2015, the motto was replaced in the Alphabet corporate code of conduct by the phrase Do the right thing, while the original one was retained in the code of conduct of Google. Around May 2018, the slogan was silently removed from the codes clauses, leaving only one generic reference in its last paragraph."}'</span> <span class="se">\</span>
+ -X POST <span class="se">\</span>
+ https://api.koncise.io
+</code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"language"</span><span class="p">:</span><span class="s2">"english"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"sentences_count"</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"summary"</span><span class="p">:</span><span class="s2">"Google LLC is an American multinational technology company that specializes in Internet-related services and products, which include online advertising technologies, search engine, cloud computing, software, and hardware. Upon completion of the restructure, Sundar Pichai was appointed CEO of Google, replacing Larry Page, who became the CEO of Alphabet. The companys rapid growth since incorporation has triggered a chain of products, acquisitions, and partnerships beyond Googles core search engine Google Search. Google has also experimented with becoming an Internet carrier. Several other Google services also figure in the top 100 most visited websites, including YouTube and Blogger."</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"algorithm"</span><span class="p">:</span><span class="s2">"lexrank"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"text"</span><span class="p">:</span><span class="s2">"Google LLC is an American multinational technology company that specializes in Internet-related services and products, which include online advertising technologies, search engine, cloud computing, software, and hardware. Google was founded in 1998 by Larry Page and Sergey Brin while they were Ph.D. students at Stanford University, California. Together, they own about 14 percent of its shares and control 56 percent of the stockholder voting power through supervoting stock. They incorporated Google as a privately held company on September 4, 1998. An initial public offering IPO took place on August 19, 2004, and Google moved to its new headquarters in Mountain View, California, nicknamed the Googleplex. In August 2015, Google announced plans to reorganize its various interests as a conglomerate called Alphabet Inc. Google, Alphabets leading subsidiary, will continue to be the umbrella company for Alphabets Internet interests. Upon completion of the restructure, Sundar Pichai was appointed CEO of Google, replacing Larry Page, who became the CEO of Alphabet. The companys rapid growth since incorporation has triggered a chain of products, acquisitions, and partnerships beyond Googles core search engine Google Search. It offers services designed for work and productivity Google Docs, Sheets, and Slides, email Gmail/Inbox, scheduling and time management Google Calendar, cloud storage Google Drive, social networking Google+, instant messaging and video chat Google Allo/Duo/Hangouts, language translation Google Translate, mapping and turn-by-turn navigation Google Maps/Waze/Earth/Street View, video sharing YouTube, note-taking Google Keep, and photo organizing and editing Google Photos. The company leads the development of the Android mobile operating system, the Google Chrome web browser, and Chrome OS, a lightweight operating system based on the Chrome browser. Google has moved increasingly into hardware; from 2010 to 2015, it partnered with major electronics manufacturers in the production of its Nexusdevices, and in October 2016, it released multiple hardware products including the Google Pixel smartphone, Home smart speaker, Wifi mesh wireless router, and Daydream View virtual reality headset. The new hardware chief, Rick Osterloh, stated: a lot of the innovation that we want to do now ends up requiring controlling the end-to-end user experience. Google has also experimented with becoming an Internet carrier. In February 2010, it announced Google Fiber, a fiber-optic infrastructure that was installed in Kansas City; in April 2015, it launched Project Fi in the United States, combining Wi-Fi and cellular networks from different providers; and in 2016, it announced the Google Station initiative to make public Wi-Fi available around the world, with initial deployment in India. Alexa, a company that monitors commercial web traffic, lists Google.com as the most visited website in the world. Several other Google services also figure in the top 100 most visited websites, including YouTube and Blogger. Google is the most valuable brand in the world as of 2017, but has received significant criticism involving issues such as privacy concerns, tax avoidance, antitrust, censorship, and search neutrality. Googles mission statement, from the outset, was to organize the worlds information and make it universally accessible and useful, and its unofficial slogan was Dont be evil. In October 2015, the motto was replaced in the Alphabet corporate code of conduct by the phrase Do the right thing, while the original one was retained in the code of conduct of Google. Around May 2018, the slogan was silently removed from the codes clauses, leaving only one generic reference in its last paragraph."</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>The following command specifies using the LSA algorithm to compute the summary and summarize the input text in only 2 sentences.</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+-d <span class="s1">'{"sentences_count":2, "algorithm":"lsa", "text":"Google LLC is an American multinational technology company that specializes in Internet-related services and products, which include online advertising technologies, search engine, cloud computing, software, and hardware. Google was founded in 1998 by Larry Page and Sergey Brin while they were Ph.D. students at Stanford University, California. Together, they own about 14 percent of its shares and control 56 percent of the stockholder voting power through supervoting stock. They incorporated Google as a privately held company on September 4, 1998. An initial public offering IPO took place on August 19, 2004, and Google moved to its new headquarters in Mountain View, California, nicknamed the Googleplex. In August 2015, Google announced plans to reorganize its various interests as a conglomerate called Alphabet Inc. Google, Alphabets leading subsidiary, will continue to be the umbrella company for Alphabets Internet interests. Upon completion of the restructure, Sundar Pichai was appointed CEO of Google, replacing Larry Page, who became the CEO of Alphabet. The companys rapid growth since incorporation has triggered a chain of products, acquisitions, and partnerships beyond Googles core search engine Google Search. It offers services designed for work and productivity Google Docs, Sheets, and Slides, email Gmail/Inbox, scheduling and time management Google Calendar, cloud storage Google Drive, social networking Google+, instant messaging and video chat Google Allo/Duo/Hangouts, language translation Google Translate, mapping and turn-by-turn navigation Google Maps/Waze/Earth/Street View, video sharing YouTube, note-taking Google Keep, and photo organizing and editing Google Photos. The company leads the development of the Android mobile operating system, the Google Chrome web browser, and Chrome OS, a lightweight operating system based on the Chrome browser. Google has moved increasingly into hardware; from 2010 to 2015, it partnered with major electronics manufacturers in the production of its Nexusdevices, and in October 2016, it released multiple hardware products including the Google Pixel smartphone, Home smart speaker, Wifi mesh wireless router, and Daydream View virtual reality headset. The new hardware chief, Rick Osterloh, stated: a lot of the innovation that we want to do now ends up requiring controlling the end-to-end user experience. Google has also experimented with becoming an Internet carrier. In February 2010, it announced Google Fiber, a fiber-optic infrastructure that was installed in Kansas City; in April 2015, it launched Project Fi in the United States, combining Wi-Fi and cellular networks from different providers; and in 2016, it announced the Google Station initiative to make public Wi-Fi available around the world, with initial deployment in India. Alexa, a company that monitors commercial web traffic, lists Google.com as the most visited website in the world. Several other Google services also figure in the top 100 most visited websites, including YouTube and Blogger. Google is the most valuable brand in the world as of 2017, but has received significant criticism involving issues such as privacy concerns, tax avoidance, antitrust, censorship, and search neutrality. Googles mission statement, from the outset, was to organize the worlds information and make it universally accessible and useful, and its unofficial slogan was Dont be evil. In October 2015, the motto was replaced in the Alphabet corporate code of conduct by the phrase Do the right thing, while the original one was retained in the code of conduct of Google. Around May 2018, the slogan was silently removed from the codes clauses, leaving only one generic reference in its last paragraph."}'</span> <span class="se">\</span>
+-X POST <span class="se">\</span>
+https://api.koncise.io
+</code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"language"</span><span class="p">:</span><span class="s2">"english"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"sentences_count"</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"summary"</span><span class="p">:</span><span class="s2">"An initial public offering IPO took place on August 19, 2004, and Google moved to its new headquarters in Mountain View, California, nicknamed the Googleplex. Google is the most valuable brand in the world as of 2017, but has received significant criticism involving issues such as privacy concerns, tax avoidance, antitrust, censorship, and search neutrality."</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"algorithm"</span><span class="p">:</span><span class="s2">"lsa"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"text"</span><span class="p">:</span><span class="s2">"Google LLC is an American multinational technology company that specializes in Internet-related services and products, which include online advertising technologies, search engine, cloud computing, software, and hardware. Google was founded in 1998 by Larry Page and Sergey Brin while they were Ph.D. students at Stanford University, California. Together, they own about 14 percent of its shares and control 56 percent of the stockholder voting power through supervoting stock. They incorporated Google as a privately held company on September 4, 1998. An initial public offering IPO took place on August 19, 2004, and Google moved to its new headquarters in Mountain View, California, nicknamed the Googleplex. In August 2015, Google announced plans to reorganize its various interests as a conglomerate called Alphabet Inc. Google, Alphabets leading subsidiary, will continue to be the umbrella company for Alphabets Internet interests. Upon completion of the restructure, Sundar Pichai was appointed CEO of Google, replacing Larry Page, who became the CEO of Alphabet. The companys rapid growth since incorporation has triggered a chain of products, acquisitions, and partnerships beyond Googles core search engine Google Search. It offers services designed for work and productivity Google Docs, Sheets, and Slides, email Gmail/Inbox, scheduling and time management Google Calendar, cloud storage Google Drive, social networking Google+, instant messaging and video chat Google Allo/Duo/Hangouts, language translation Google Translate, mapping and turn-by-turn navigation Google Maps/Waze/Earth/Street View, video sharing YouTube, note-taking Google Keep, and photo organizing and editing Google Photos. The company leads the development of the Android mobile operating system, the Google Chrome web browser, and Chrome OS, a lightweight operating system based on the Chrome browser. Google has moved increasingly into hardware; from 2010 to 2015, it partnered with major electronics manufacturers in the production of its Nexusdevices, and in October 2016, it released multiple hardware products including the Google Pixel smartphone, Home smart speaker, Wifi mesh wireless router, and Daydream View virtual reality headset. The new hardware chief, Rick Osterloh, stated: a lot of the innovation that we want to do now ends up requiring controlling the end-to-end user experience. Google has also experimented with becoming an Internet carrier. In February 2010, it announced Google Fiber, a fiber-optic infrastructure that was installed in Kansas City; in April 2015, it launched Project Fi in the United States, combining Wi-Fi and cellular networks from different providers; and in 2016, it announced the Google Station initiative to make public Wi-Fi available around the world, with initial deployment in India. Alexa, a company that monitors commercial web traffic, lists Google.com as the most visited website in the world. Several other Google services also figure in the top 100 most visited websites, including YouTube and Blogger. Google is the most valuable brand in the world as of 2017, but has received significant criticism involving issues such as privacy concerns, tax avoidance, antitrust, censorship, and search neutrality. Googles mission statement, from the outset, was to organize the worlds information and make it universally accessible and useful, and its unofficial slogan was Dont be evil. In October 2015, the motto was replaced in the Alphabet corporate code of conduct by the phrase Do the right thing, while the original one was retained in the code of conduct of Google. Around May 2018, the slogan was silently removed from the codes clauses, leaving only one generic reference in its last paragraph."</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint returns the summary of the text parameter.</p>
+
+<p>If the number of sentences in text is less than the sentences_count, the original text will be returned.</p>
+<h3 id='uri-endpoint'>URI Endpoint</h3>
+<p><code>POST https://api.koncise.io</code></p>
+<h3 id='required-post-parameters'>Required POST Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>text</td>
+<td>Input text to summarize</td>
+</tr>
+</tbody></table>
+<h3 id='optional-post-parameters'>Optional POST Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>sentences_count</td>
+<td>Sentence length of summary</td>
+<td>5</td>
+</tr>
+<tr>
+<td>language</td>
+<td>Language of input text</td>
+<td>&#39;english&#39;</td>
+</tr>
+<tr>
+<td>algorithm</td>
+<td>Algorithm to use when summarizing the text, choice of lexrank, textrank, or lsa.</td>
+<td>&#39;lexrank&#39;</td>
+</tr>
+</tbody></table>
+<h1 id='errors'>Errors</h1>
+<p>The Koncise API uses the following error codes:</p>
+
+<table><thead>
+<tr>
+<th>Error Code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>400</td>
+<td>Bad Request -- Your request is invalid, read the error string returned for the problem.</td>
+</tr>
+<tr>
+<td>500</td>
+<td>Internal Server Error -- We had a problem with our server. Try again later.</td>
+</tr>
+</tbody></table>
+
       </div>
-    </header>
-
-    <!-- Icons Grid -->
-    <section class="features-icons bg-light text-center">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-4">
-            <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-              <div class="features-icons-icon d-flex">
-                <i class="icon-screen-desktop m-auto text-primary"></i>
-              </div>
-              <h3>Fully Responsive</h3>
-              <p class="lead mb-0">This theme will look great on any device, no matter the size!</p>
-            </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="shell">shell</a>
+                <a href="#" data-language-name="python">python</a>
           </div>
-          <div class="col-lg-4">
-            <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-              <div class="features-icons-icon d-flex">
-                <i class="icon-layers m-auto text-primary"></i>
-              </div>
-              <h3>Bootstrap 4 Ready</h3>
-              <p class="lead mb-0">Featuring the latest build of the new Bootstrap 4 framework!</p>
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="features-icons-item mx-auto mb-0 mb-lg-3">
-              <div class="features-icons-icon d-flex">
-                <i class="icon-check m-auto text-primary"></i>
-              </div>
-              <h3>Easy to Use</h3>
-              <p class="lead mb-0">Ready to use with your own content, or customize the source files!</p>
-            </div>
-          </div>
-        </div>
       </div>
-    </section>
-
-    <!-- Image Showcases -->
-    <section class="showcase">
-      <div class="container-fluid p-0">
-        <div class="row no-gutters">
-
-<link rel="stylesheet" type="text/css" href="{% static 'textsum/css/landing-page.css' %}">
-
-          <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url({% static 'textsum/img/bg-showcase-1.jpg' %});"></div>
-          <div class="col-lg-6 order-lg-1 my-auto showcase-text">
-            <h2>Fully Responsive Design</h2>
-            <p class="lead mb-0">When you use a theme created by Start Bootstrap, you know that the theme will look great on any device, whether it's a phone, tablet, or desktop the page will behave responsively!</p>
-          </div>
-        </div>
-        <div class="row no-gutters">
-          <div class="col-lg-6 text-white showcase-img" style="background-image: url({% static 'textsum/img/bg-showcase-2.jpg' %});"></div>
-          <div class="col-lg-6 my-auto showcase-text">
-            <h2>Updated For Bootstrap 4</h2>
-            <p class="lead mb-0">Newly improved, and full of great utility classes, Bootstrap 4 is leading the way in mobile responsive web development! All of the themes on Start Bootstrap are now using Bootstrap 4!</p>
-          </div>
-        </div>
-        <div class="row no-gutters">
-          <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url({% static 'textsum/img/bg-showcase-3.jpg' %});"></div>
-          <div class="col-lg-6 order-lg-1 my-auto showcase-text">
-            <h2>Easy to Use &amp; Customize</h2>
-            <p class="lead mb-0">Landing Page is just HTML and CSS with a splash of SCSS for users who demand some deeper customization options. Out of the box, just add your content and images, and your new landing page will be ready to go!</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section class="testimonials text-center bg-light">
-      <div class="container">
-        <h2 class="mb-5">What people are saying...</h2>
-        <div class="row">
-          <div class="col-lg-4">
-            <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-              <img class="img-fluid rounded-circle mb-3" src="{% static 'textsum/img/testimonials-1.jpg' %}" alt="">
-              <h5>Margaret E.</h5>
-              <p class="font-weight-light mb-0">"This is fantastic! Thanks so much guys!"</p>
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-              <img class="img-fluid rounded-circle mb-3" src="{% static 'textsum/img/testimonials-2.jpg' %}" alt="">
-              <h5>Fred S.</h5>
-              <p class="font-weight-light mb-0">"Bootstrap is amazing. I've been using it to create lots of super nice landing pages."</p>
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-              <img class="img-fluid rounded-circle mb-3" src="{% static 'textsum/img/testimonials-3.jpg' %}" alt="">
-              <h5>Sarah	W.</h5>
-              <p class="font-weight-light mb-0">"Thanks so much for making these free resources available to us!"</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Call to Action -->
-    <section class="call-to-action text-white text-center">
-      <div class="overlay"></div>
-      <div class="container">
-        <div class="row">
-          <div class="col-xl-9 mx-auto">
-            <h2 class="mb-4">Ready to get started? Sign up now!</h2>
-          </div>
-          <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
-            <form>
-              <div class="form-row">
-                <div class="col-12 col-md-9 mb-2 mb-md-0">
-                  <input type="email" class="form-control form-control-lg" placeholder="Enter your email...">
-                </div>
-                <div class="col-12 col-md-3">
-                  <button type="submit" class="btn btn-block btn-lg btn-primary">Sign up!</button>
-                </div>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer bg-light">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
-            <ul class="list-inline mb-2">
-              <li class="list-inline-item">
-                <a href="#">About</a>
-              </li>
-              <li class="list-inline-item">&sdot;</li>
-              <li class="list-inline-item">
-                <a href="#">Contact</a>
-              </li>
-              <li class="list-inline-item">&sdot;</li>
-              <li class="list-inline-item">
-                <a href="#">Terms of Use</a>
-              </li>
-              <li class="list-inline-item">&sdot;</li>
-              <li class="list-inline-item">
-                <a href="#">Privacy Policy</a>
-              </li>
-            </ul>
-            <p class="text-muted small mb-4 mb-lg-0">&copy; Your Website 2018. All Rights Reserved.</p>
-          </div>
-          <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
-            <ul class="list-inline mb-0">
-              <li class="list-inline-item mr-3">
-                <a href="#">
-                  <i class="fa fa-facebook fa-2x fa-fw"></i>
-                </a>
-              </li>
-              <li class="list-inline-item mr-3">
-                <a href="#">
-                  <i class="fa fa-twitter fa-2x fa-fw"></i>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#">
-                  <i class="fa fa-instagram fa-2x fa-fw"></i>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </footer>
-
-    <!-- Bootstrap core JavaScript -->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-    crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-
+    </div>
   </body>
-
 </html>
