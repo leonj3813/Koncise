@@ -201,7 +201,7 @@
       <script src="{% static 'textsum/js/all_nosearch.js' %}"></script>
   </head>
 
-  <body class="index" data-languages="[&quot;shell&quot;,&quot;python&quot;]">
+  <body class="index" data-languages="[&quot;shell&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -212,7 +212,6 @@
       <img src="{% static 'textsum/img/logo.png' %}" class="logo" alt="Logo" />
         <div class="lang-selector">
               <a href="#" data-language-name="shell">shell</a>
-              <a href="#" data-language-name="python">python</a>
         </div>
       <div id="toc" class="toc-list-h1">
           <li>
@@ -247,14 +246,8 @@
 
 <p>The Koncise API is free to use for up to 100 summaries a day.</p>
 
-<!-- We have language bindings in Shell, Ruby, and Python! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
+<h1 id='summation'>Summation</h1>
 
-This example API documentation page was created with [Slate](https://github.com/lord/slate). Feel free to edit it and use it as a base for your own API's documentation. -->
-<h1 id='summation'>Summation</h1><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
-</code></pre>
 <blockquote>
 <p>The command below returns the summary of the text field in &quot;summary&quot; and includes the defaults for &quot;algorithm&quot;, &quot;sentences_count&quot; and &quot;language&quot;.</p>
 </blockquote>
@@ -349,7 +342,6 @@ https://api.koncise.io
       <div class="dark-box">
           <div class="lang-selector">
                 <a href="#" data-language-name="shell">shell</a>
-                <a href="#" data-language-name="python">python</a>
           </div>
       </div>
     </div>
