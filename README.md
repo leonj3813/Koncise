@@ -5,12 +5,18 @@ Project using Django Rest Framework to provide a simple API for text summation. 
 
 Utilizes Django Rest Framework for POST data parsing, serialization, and daily rate limiting of API.
 
-## Localhost installation
+## Localhost usage
 The Django project can be run with
 ```python
  python manage.py runserver
  ```
  This serves the application at localhost:8000 and the API endpoint at api.localhost:8000. You may have to change your hosts file to get the api subdomain to work on your localhost.
+
+The project also includes a docker-compose file that sets up the application behind a Nginx server. Running
+```shell
+docker-compose up
+```
+will serve the application at localhost and the API endpoint at api.localhost.
 
 ## Usage
 The index page includes all API commands and examples for use.
