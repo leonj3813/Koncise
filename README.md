@@ -18,9 +18,9 @@ The project also includes a docker-compose file that can be used to set up the a
 ```shell
 docker-compose up
 ```
-will serve the application at localhost and the API endpoint at api.localhost.
+will serve the application.
 
-Nginx is setup to only work with https. New https certificates will have to be loaded using letsencrypt.
+Nginx is setup to only work with https. New https certificates will have to be loaded using letsencrypt. Also the file textsum.conf needs to have the field 'server_name' set to the domain name.
 
 Also Nginx is setup to use a production settings file instead of the local settings file. Make a new file called 'production.py' in textprocessor/setting and use local.py as a template. Set DEBUG=False, ALLOWED_HOSTS should be the domain name (or keep localhost), and a new SECRET_KEY value should be chosen.
 
