@@ -9,7 +9,7 @@ COPY . /code/
 RUN pip install -r requirements.txt
 
 # Add any custom, static environment variables needed by Django or your settings file here:
-ENV DJANGO_SETTINGS_MODULE=textprocessor.settings
+ENV DJANGO_SETTINGS_MODULE=textprocessor.settings.production
 
 # Collect static files
 RUN python manage.py collectstatic --noinput

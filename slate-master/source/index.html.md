@@ -20,7 +20,7 @@ The Koncise API is free to use for up to 100 summaries a day.
 
 # Summation
 
-> The command below returns the summary of the text field in "summary" and includes the defaults for "algorithm", "sentences_count" and "language".
+> The command below returns the summary of the text field in "summary" and uses the defaults for "algorithm", "sentences_count" and "language".
 
 ```shell
 curl -H "Content-Type: application/json" \
@@ -59,7 +59,9 @@ https://api.koncise.io
 ```
 This endpoint returns the summary of the text parameter.
 
-If the number of sentences in text is less than the sentences_count, the original text will be returned.
+If the number of sentences in text is less than or equal to the sentences_count, the original text will be returned.
+
+The Koncise API only supports the HTTPS protocol, HTTP requests will not work.
 
 ### URI Endpoint
 

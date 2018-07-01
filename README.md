@@ -20,5 +20,9 @@ docker-compose up
 ```
 will serve the application at localhost and the API endpoint at api.localhost.
 
+Nginx is setup to only work with https. New https certificates will have to be loaded using letsencrypt.
+
+Also Nginx is setup to use a production settings file instead of the local settings file. Make a new file called 'production.py' in textprocessor/setting and use local.py as a template. Set DEBUG=False, ALLOWED_HOSTS should be the domain name (or keep localhost), and a new SECRET_KEY value should be chosen.
+
 ## Usage
 The index page includes all API commands and examples for use.
