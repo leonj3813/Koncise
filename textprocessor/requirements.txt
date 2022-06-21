@@ -9,7 +9,7 @@ httpie==0.9.9
 idna==2.7
 lxml==4.2.1
 nltk==3.3
-numpy==1.14.5
+numpy==1.22.0
 Pygments==2.2.0
 pytz==2018.4
 requests==2.19.1
